@@ -1,0 +1,14 @@
+C:\Users\User\Desktop\демо\вариант 2\Модуль 4\100%\PolesieUsersApp\bin\Debug\net48\PolesieUsersApp.exe.config
+C:\Users\User\Desktop\демо\вариант 2\Модуль 4\100%\PolesieUsersApp\bin\Debug\net48\PolesieUsersApp.exe
+C:\Users\User\Desktop\демо\вариант 2\Модуль 4\100%\PolesieUsersApp\bin\Debug\net48\PolesieUsersApp.pdb
+C:\Users\User\Desktop\демо\вариант 2\Модуль 4\100%\PolesieUsersApp\obj\Debug\net48\PolesieUsersApp.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\демо\вариант 2\Модуль 4\100%\PolesieUsersApp\obj\Debug\net48\PolesieUsersApp.forms.FormAdmin.resources
+C:\Users\User\Desktop\демо\вариант 2\Модуль 4\100%\PolesieUsersApp\obj\Debug\net48\PolesieUsersApp.forms.FormUser.resources
+C:\Users\User\Desktop\демо\вариант 2\Модуль 4\100%\PolesieUsersApp\obj\Debug\net48\PolesieUsersApp.forms.main.resources
+C:\Users\User\Desktop\демо\вариант 2\Модуль 4\100%\PolesieUsersApp\obj\Debug\net48\PolesieUsersApp.csproj.GenerateResource.cache
+C:\Users\User\Desktop\демо\вариант 2\Модуль 4\100%\PolesieUsersApp\obj\Debug\net48\PolesieUsersApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\демо\вариант 2\Модуль 4\100%\PolesieUsersApp\obj\Debug\net48\PolesieUsersApp.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\демо\вариант 2\Модуль 4\100%\PolesieUsersApp\obj\Debug\net48\PolesieUsersApp.AssemblyInfo.cs
+C:\Users\User\Desktop\демо\вариант 2\Модуль 4\100%\PolesieUsersApp\obj\Debug\net48\PolesieUsersApp.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\демо\вариант 2\Модуль 4\100%\PolesieUsersApp\obj\Debug\net48\PolesieUsersApp.exe
+C:\Users\User\Desktop\демо\вариант 2\Модуль 4\100%\PolesieUsersApp\obj\Debug\net48\PolesieUsersApp.pdb
