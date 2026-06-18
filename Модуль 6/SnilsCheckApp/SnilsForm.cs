@@ -1,11 +1,10 @@
 using System;
 using System.IO;
-using System.IO.Compression;
-using System.Linq;
 using System.Net;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using System.Xml.Linq;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace SnilsCheckApp
 {
@@ -84,48 +83,31 @@ namespace SnilsCheckApp
         private void SaveResult(string result1, string result2)
         {
             string file = FindTestFile();
-            XNamespace w = "http://schemas.openxmlformats.org/wordprocessingml/2006/main";
 
-            using (ZipArchive zip = ZipFile.Open(file, ZipArchiveMode.Update))
+            Word.Application app = new Word.Application();
+            Word.Document doc = null;
+
+            try
             {
-                ZipArchiveEntry entry = zip.GetEntry("word/document.xml");
-                XDocument doc;
+                doc = app.Documents.Open(file);
+                Word.Table table = doc.Tables[1];
 
-                using (Stream stream = entry.Open())
-                {
-                    doc = XDocument.Load(stream);
-                }
+                table.Cell(2, 3).Range.Text = result1;
+                table.Cell(3, 3).Range.Text = result2;
 
-                XElement table = doc.Descendants(w + "tbl").First();
-                XElement row1 = table.Elements(w + "tr").ElementAt(1);
-                XElement row2 = table.Elements(w + "tr").ElementAt(2);
-
-                SetText(row1.Elements(w + "tc").ElementAt(2), result1, "ResultData", 1, w);
-                SetText(row2.Elements(w + "tc").ElementAt(2), result2, "ResultFormat", 2, w);
-
-                entry.Delete();
-                entry = zip.CreateEntry("word/document.xml");
-
-                using (Stream stream = entry.Open())
-                {
-                    doc.Save(stream);
-                }
+                doc.Save();
             }
-        }
+            finally
+            {
+                if (doc != null)
+                {
+                    doc.Close();
+                    Marshal.ReleaseComObject(doc);
+                }
 
-        private void SetText(XElement cell, string text, string bookmark, int id, XNamespace w)
-        {
-            cell.Elements(w + "p").Remove();
-
-            cell.Add(
-                new XElement(w + "p",
-                    new XElement(w + "bookmarkStart",
-                        new XAttribute(w + "id", id),
-                        new XAttribute(w + "name", bookmark)),
-                    new XElement(w + "r",
-                        new XElement(w + "t", text)),
-                    new XElement(w + "bookmarkEnd",
-                        new XAttribute(w + "id", id))));
+                app.Quit();
+                Marshal.ReleaseComObject(app);
+            }
         }
 
         private string FindTestFile()
